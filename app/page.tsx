@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { Menu } from "./interface/menu";
+import { useEffect, useState } from "react";
 
 
 async function getData() {
@@ -11,8 +12,15 @@ async function getData() {
   }
 
 
-async function Home() {
-  const data:Menu[] = await getData()
+function Home() {
+    const [data, setData] = useState<Menu[]>([]); // Initialize state for items
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedData = await getData();
+      setData(fetchedData);
+    };
+    fetchData();
+  }, []);
   console.log(data)
 
   return (

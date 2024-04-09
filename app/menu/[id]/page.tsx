@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Menu } from '@/app/interface/menu'
+import { useRouter } from 'next/navigation'
 
 
 async function getData(id:string) {
@@ -12,9 +13,35 @@ async function getData(id:string) {
     }
 
 
+
+
+
+
 export default async function menupage({ params }: { params: { id: string } }) {
     const id = params.id 
+    const  router = useRouter();
     const data:Menu[] = await getData(id)
+    //  ปุ่มลบเมนู 
+    async function handledelete() {
+  // ทำการลบโพสต์ที่มี id เป็น params.id ที่ต้องการลบ
+  try {
+      const response = await fetch(`http://localhost:3000/api/menus?id=${id}`, {
+          method: "DELETE"
+      });
+
+      if (!response.ok) {
+          throw new Error("Failed to delete item");
+      }
+
+      alert("Item deleted successfully!");
+      // อัปเดตข้อมูลหลังจากลบสำเร็จ
+      router.push("/"); // พากลับไปที่หน้าแรก
+  } catch (error) {
+      console.error("Error deleting item:", error);
+      alert("Failed to delete item. Please try again.");
+  }
+};
+
   return (
     <>
      
@@ -59,7 +86,7 @@ export default async function menupage({ params }: { params: { id: string } }) {
         แก้ไขเมนู
         </button>
 
-        <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <button onClick={handledelete} className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
         ลบเมนู
         </button>
         
