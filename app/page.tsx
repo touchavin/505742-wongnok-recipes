@@ -54,10 +54,10 @@ function Home() {
   </thead>
   <tbody>
     <tr>
-      <td>รูป</td>
-      <td>{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</td>
-      <th>{data.map((val)=>(<li key={val.id}>{val.description}</li>))}</th>
+      <th><figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure></th>
+      <th>{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</th>
       <th>{data.map((val)=>(<li key={val.id}>{val.ingredients}</li>))}</th>
+      <th>{data.map((val)=>(<li key={val.id}>{val.description}</li>))}</th>
       <th>{data.map((val)=>(<li key={val.id}>{val.period}</li>))}</th>
       <th>{data.map((val)=>(<li key={val.id}>{val.level}</li>))}</th>
       <td>{data.map((val)=>(<li key={val.id}>{}<Link href={`/menu/${val.id}`}> ดูรายละเอียด</Link></li>))}</td>
