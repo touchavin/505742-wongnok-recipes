@@ -49,6 +49,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 การใช้งาน
 http://localhost:3000
 หน้าหลัก
+    -ชื่ออาหาร
+    -วัตถุดิบ
+    -ขั้นตอน
+    -ระยะเวลา
+    -ความยากง่าย
+    -รายละเอียด http://localhost:3000/menu/{id} 
 
 http://localhost:3000/createmenu 
 หน้าสร้างเมนู 
