@@ -51,8 +51,10 @@ export default async function menupage({ params }: { params: { id: string } }) {
 
 
     <div className="card w-96 bg-base-100 shadow-xl">
+      <br></br>
+      <figure>{data.map((val)=>(<img src={val.img} key={val.id}></img>))}</figure>
+     
       
-      <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
       <div className="card-body">
         <h2 className="card-title">{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</h2>
 

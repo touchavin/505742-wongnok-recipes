@@ -39,35 +39,34 @@ function Home() {
 
 
 <br></br>
-    <table className="table-auto">
-  <thead>
+<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
-      <th>รูป</th>
-      <th>ชื่ออาหาร</th>
-      <th>วัตถุดิบ</th>
-      <th>ขั้นตอน</th>
-      <th>ระยะเวลา</th>
-      <th>ความยากง่าย</th>
-      <th>รายละเอียด</th>
+      <th className="border px-4 py-2">รูป</th>
+      <th className="border px-4 py-2">ชื่ออาหาร</th>
+      <th className="border px-4 py-2">วัตถุดิบ</th>
+      <th className="border px-4 py-2">ขั้นตอน</th>
+      <th className="border px-4 py-2">ระยะเวลา</th>
+      <th className="border px-4 py-2">ความยากง่าย</th>
+      <th className="border px-4 py-2">รายละเอียด</th>
 
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th><figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure></th>
-      <th>{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</th>
-      <th>{data.map((val)=>(<li key={val.id}>{val.ingredients}</li>))}</th>
-      <th>{data.map((val)=>(<li key={val.id}>{val.description}</li>))}</th>
-      <th>{data.map((val)=>(<li key={val.id}>{val.period}</li>))}</th>
-      <th>{data.map((val)=>(<li key={val.id}>{val.level}</li>))}</th>
-      <td>{data.map((val)=>(<li key={val.id}>{}<Link href={`/menu/${val.id}`}> ดูรายละเอียด</Link></li>))}</td>
+      <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">{data.map((val)=>(<img src={val.img} key={val.id}></img>))}</th>
+      <th className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</th>
+      <th className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{val.ingredients}</li>))}</th>
+      <th className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{val.description}</li>))}</th>
+      <th className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{val.period}</li>))}</th>
+      <th className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{val.level}</li>))}</th>
+      <td className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{}<Link href={`/menu/${val.id}`}> ดูรายละเอียด</Link></li>))}</td>
     </tr>
     
   </tbody>
 </table>
-
-
-    
+</div>
     
     
     </>
