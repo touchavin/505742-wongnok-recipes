@@ -51,4 +51,4 @@ http://localhost:3000/createmenu หน้าสร้างเมนู
 
 http://localhost:3000/menu/{id} ดูเนื้อหาเมนู หน้าแก้ไขเมนู-ลบเมนู
 
-http://localhost:3000/editmenu/{id} แก้ไขข้อมูลเมนู 
+http://localhost:3000/editmenu/{id} แก้ไข-อัพเดทข้อมูลเมนู 
