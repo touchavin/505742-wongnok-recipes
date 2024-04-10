@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Menu } from '@/app/interface/menu'
 import { useRouter } from 'next/navigation'
 
-
+//  getData เมนู 
 async function getData(id:string) {
     // console.log(id)
     const res = await fetch(`http://localhost:3000/api/menus?id=${id}`)
@@ -21,9 +21,9 @@ export default async function menupage({ params }: { params: { id: string } }) {
     const id = params.id 
     const  router = useRouter();
     const data:Menu[] = await getData(id)
-    //  ปุ่มลบเมนู 
+//  ปุ่มลบเมนู 
     async function handledelete() {
-  // ทำการลบโพสต์ที่มี id เป็น params.id ที่ต้องการลบ
+// ทำการลบโพสต์ที่มี id เป็น params.id ที่ต้องการลบ
   try {
       const response = await fetch(`http://localhost:3000/api/menus?id=${id}`, {
           method: "DELETE"
