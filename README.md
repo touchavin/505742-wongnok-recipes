@@ -8,7 +8,6 @@ install package ที่ยังไม่มี ใน node_modules ถ้า 
 
 npm install
 
-
 # Tailwind CSS
 npm install -D tailwindcss
 
