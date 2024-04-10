@@ -11,7 +11,7 @@ npm install
 # Tailwind CSS
 npm install -D tailwindcss
 
-database devpool.db
+# database devpool.db
 npm install sqlite3
 
 start server
@@ -50,3 +50,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 http://localhost:3000/createmenu หน้าสร้างเมนู
 
 http://localhost:3000/menu/{id} ดูเนื้อหาเมนู หน้าแก้ไขเมนู-ลบเมนู
+
+http://localhost:3000/editmenu/{id} แก้ไขข้อมูลเมนู 
