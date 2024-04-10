@@ -47,8 +47,26 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 การใช้งาน
-http://localhost:3000/createmenu หน้าสร้างเมนู
+http://localhost:3000
+หน้าหลัก
+
+http://localhost:3000/createmenu 
+หน้าสร้างเมนู 
+    -ชื่ออาหาร
+    -วัตถุดิบ
+    -ขั้นตอน
+    -ระยะเวลา
+    -ความยากง่าย
 
 http://localhost:3000/menu/{id} ดูเนื้อหาเมนู หน้าแก้ไขเมนู-ลบเมนู
-
+    -ชื่ออาหาร
+    -วัตถุดิบ
+    -ขั้นตอน
+    -ระยะเวลา
+    -ความยากง่าย
 http://localhost:3000/editmenu/{id} แก้ไข-อัพเดทข้อมูลเมนู 
+    -ชื่ออาหาร
+    -วัตถุดิบ
+    -ขั้นตอน
+    -ระยะเวลา
+    -ความยากง่าย
