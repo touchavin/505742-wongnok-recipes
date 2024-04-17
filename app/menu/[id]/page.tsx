@@ -5,7 +5,7 @@ import { Menu } from '@/app/interface/menu'
 import { useRouter } from 'next/navigation'
 
 //  getData เมนู 
-async function getData(id:string) {
+    async function getData(id:string) {
     // console.log(id)
     const res = await fetch(`http://localhost:3000/api/menus?id=${id}`)
 
@@ -21,6 +21,12 @@ export default async function menupage({ params }: { params: { id: string } }) {
     const id = params.id 
     const  router = useRouter();
     const data:Menu[] = await getData(id)
+    console.log(data)
+
+
+
+
+
 //  ปุ่มลบเมนู 
     async function handledelete() {
 // ทำการลบโพสต์ที่มี id เป็น params.id ที่ต้องการลบ
@@ -56,6 +62,7 @@ export default async function menupage({ params }: { params: { id: string } }) {
      
       
       <div className="card-body">
+        <h6>ชื่ออาหาร</h6>
         <h2 className="card-title">{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</h2>
 
     <br></br>   
@@ -74,20 +81,26 @@ export default async function menupage({ params }: { params: { id: string } }) {
      
 
 
-
+      <h6>ขั้นตอนการทำ</h6>
       <p>{data.map((val)=>(<li key={val.id}>{val.description}</li>))}</p>
+      <br></br>
+      <h6>เครื่องปรุง</h6>
       <p>{data.map((val)=>(<li key={val.id}>{val.ingredients}</li>))}</p>
+      <br></br>
+      <h6>ระยะเวลา</h6>
       <p>{data.map((val)=>(<li key={val.id}>{val.period}</li>))}</p>
+      <br></br>
+      <h6>ความยากง่าย</h6>
       <p>{data.map((val)=>(<li key={val.id}>{val.level}</li>))}</p>
 
 
 
         <br></br>
         
-        <button className="bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <button onClick={() => router.push(`/editmenu/${data[0].id}`)} className="bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
         แก้ไขเมนู
         </button>
-
+        
         <button onClick={handledelete} className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
         ลบเมนู
         </button>
