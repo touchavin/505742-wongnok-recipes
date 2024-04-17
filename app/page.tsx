@@ -14,6 +14,8 @@ async function getData() {
 
 function Home() {
     const [data, setData] = useState<Menu[]>([]); // Initialize state for items
+
+    const [searchTerm, setSearchTerm] = useState<string>('');
   useEffect(() => {
     const fetchData = async () => {
       const fetchedData = await getData();
@@ -21,7 +23,15 @@ function Home() {
     };
     fetchData();
   }, []);
-  console.log(data)
+
+  // console.log(data)
+
+  // Filter data based on search term
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+
 
   return (
     <>
@@ -39,6 +49,15 @@ function Home() {
 
 
 <br></br>
+ <br />
+      <input
+        type="text"
+        placeholder="ค้นหาเมนู..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="border px-4 py-2 mb-4"
+      />
+      <br />
 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
   <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -53,7 +72,8 @@ function Home() {
 
     </tr>
   </thead>
-  <tbody>
+  {/* <tbody>
+
     <tr>
       <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">{data.map((val)=>(<img src={val.img} key={val.id}></img>))}</th>
       <th className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{val.name}</li>))}</th>
@@ -64,7 +84,36 @@ function Home() {
       <td className="border px-4 py-2">{data.map((val)=>(<li key={val.id}>{}<Link href={`/menu/${val.id}`}> ดูรายละเอียด</Link></li>))}</td>
     </tr>
     
-  </tbody>
+  </tbody> */}
+   <tbody>
+            {filteredData.map((val) => (
+              <tr key={val.id}>
+                <td className="border px-4 py-2">
+                  <img src={val.img} alt={val.name} />
+                </td>
+                <td className="border px-4 py-2">{val.name}</td>
+                <td className="border px-4 py-2">{val.ingredients}</td>
+                <td className="border px-4 py-2">{val.description}</td>
+                <td className="border px-4 py-2">{val.period}</td>
+                <td className="border px-4 py-2">{val.level}</td>
+                <td className="border px-4 py-2">
+                  <Link href={`/menu/${val.id}`}>ดูรายละเอียด</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+
+
+  
+
+
+
+
+
+
+
+
+
 </table>
 </div>
     
