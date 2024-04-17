@@ -31,6 +31,32 @@ import { useRouter } from 'next/navigation'
   )
 
 
+
+useEffect(() => {
+  //  getData เมนู 
+async function getData(id:string) {
+  // console.log(id)
+  const res = await fetch(`http://localhost:3000/api/menus?id=${id}`)
+  const data:Menu[] = await res.json()
+  setfromdata(data[0])
+  return res.json()
+  }
+ 
+  getData(id)
+} ,[])
+
+
+  
+  function handlechange(event:any){
+  const {name,value} = event.target
+  setfromdata({...fromdata,[name]:value})
+  
+  // console.log(name, value)
+
+
+  }
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -59,32 +85,6 @@ import { useRouter } from 'next/navigation'
       alert("Failed to add item. Please try again.");
     }
   };
-
-useEffect(() => {
-  //  getData เมนู 
-async function getData(id:string) {
-  // console.log(id)
-  const res = await fetch(`http://localhost:3000/api/menus?id=${id}`)
-  const data:Menu[] = await res.json()
-  setfromdata(data[0])
-  return res.json()
-  }
- 
-  getData(id)
-} ,[])
-
-
-  
-  function handlechange(event:any){
-  const {name,value} = event.target
-  setfromdata({...fromdata,[name]:value})
-  
-  // console.log(name, value)
-
-
-  }
-
-
    return (
     <>
   <form onSubmit={handleSubmit}>
