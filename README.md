@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 🚀 First, run the development server:
 
-```bash
+
 # install package ที่ยังไม่มี ใน node_modules ถ้า package ใน dependencies ไว้เเล้ว 
 ```bash
 $ npm install
