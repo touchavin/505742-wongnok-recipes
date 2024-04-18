@@ -95,6 +95,8 @@ http://localhost:3000/editmenu/{id} แก้ไข-อัพเดทข้อ�
     -ความยากง่าย
 
 
-ระบบsignin-signout ด้วยgoogle
+ระบบsignin ด้วยgoogle
 http://localhost:3000/api/auth/signin
+
+ระบบsigout ด้วยgoogle
 http://localhost:3000/api/auth/signout
