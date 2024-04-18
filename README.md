@@ -5,15 +5,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ```bash
 # install package ที่ยังไม่มี ใน node_modules ถ้า package ใน dependencies ไว้เเล้ว 
-
+```bash
 $ npm install
-
+```
+```bash
 # Tailwind CSS
 $ npm install -D tailwindcss
-
+```
+```bash
 # database devpool.db
 $ npm install sqlite3
-
+```
+```bash
 start server
 $ npm run dev
 # or
@@ -23,6 +26,11 @@ $ pnpm dev
 # or
 bun dev
 ```
+
+
+
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -47,7 +55,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 การใช้งาน
+
+```bash
 http://localhost:3000
+```
+
 หน้าหลัก
     -ชื่ออาหาร
     -วัตถุดิบ
