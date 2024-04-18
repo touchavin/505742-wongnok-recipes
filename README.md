@@ -100,3 +100,7 @@ http://localhost:3000/api/auth/signin
 
 ระบบsigout ด้วยgoogle
 http://localhost:3000/api/auth/signout
+
+
+วิดีโอใช้งาน
+https://youtu.be/HlAvpHYEkqk
