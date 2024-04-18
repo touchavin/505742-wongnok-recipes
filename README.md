@@ -6,20 +6,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ```bash
 # install package ที่ยังไม่มี ใน node_modules ถ้า package ใน dependencies ไว้เเล้ว 
 
-npm install
+$ npm install
 
 # Tailwind CSS
-npm install -D tailwindcss
+$ npm install -D tailwindcss
 
 # database devpool.db
-npm install sqlite3
+$ npm install sqlite3
 
 start server
-npm run dev
+$ npm run dev
 # or
-yarn dev
+$ yarn dev
 # or
-pnpm dev
+$ pnpm dev
 # or
 bun dev
 ```
