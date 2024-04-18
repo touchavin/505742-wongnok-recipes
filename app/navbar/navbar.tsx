@@ -1,11 +1,12 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 export default function Navbar(){
-
+  const {data:session} = useSession();
   const [searchQuery, setSearchQuery] = useState<string>("");
-
+  // console.log(session)
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
@@ -31,10 +32,13 @@ export default function Navbar(){
             หน้าแรก
           </Link>
 
-
-          <Link href="/login" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          { !session && <Link href="/api/auth/signin" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             เข้าสู่ระบบ
-          </Link>
+          </Link>}
+          { session && <Link href="/api/auth/signout" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            ออกจากระบบ
+          </Link>}
+          
           
         </div>
       </div>
