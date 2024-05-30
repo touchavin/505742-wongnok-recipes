@@ -1,3 +1,5 @@
+-- open 
+-- >SQLite:open DATABASE
 -- SQLite
 -- สร้างตารางใหม่sql create table menus by interface menu  in sql
 CREATE TABLE menus (
